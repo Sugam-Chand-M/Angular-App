@@ -1,0 +1,117 @@
+<h1>Programming Books List!</h1>
+<!--
+<ul>
+    <li>
+        <img src="{{src1}}" alt="{{name1}}" width="100"/> //basically we can embed values using variables using interpolation
+        {{ name1 }} by {{ author1 }}
+    </li>
+    <li>
+        <img src="{{src2}}" alt="{{name2}}" width="100"/> //basically we can embed values using variables using interpolation
+        {{ name2 }} by {{ author2 }}
+    </li>
+</ul> -->
+
+<!-- Property binding-->
+<!--<button [disabled]="isDisabled">Show Books</button>
+<ul>
+    <li>
+        <img [src]="src1" [alt]="name1" width="100"/> 
+        {{ name1 }} by {{ author1 }}
+    </li>
+    <li>
+        <img [src]="src2" [alt]="name2" width="100"/> 
+        {{ name2 }} by {{ author2 }}
+    </li>
+</ul> -->
+
+<!-- Event binding -->
+<!--<button (click)="handleClick()" [disabled]="isDisabled">Show Books</button>
+<ul>
+    <li>
+        <img [src]="src1" [alt]="name1" width="100"/> 
+        {{ name1 }} by {{ author1 }}
+    </li>
+    <li>
+        <img [src]="src2" [alt]="name2" width="100"/> 
+        {{ name2 }} by {{ author2 }}
+    </li>
+</ul>-->
+
+<!--Two way binding-->
+<!--<button (click)="handleClick()" [disabled]="isDisabled">Show Books</button>
+<input type="text" [(ngModel)]="myName"/>
+<p>{{myName}}</p>
+<ul>
+    <li>
+        <img [src]="src1" [alt]="name1" width="100"/> 
+        {{ name1 }} by {{ author1 }}
+    </li>
+    <li>
+        <img [src]="src2" [alt]="name2" width="100"/> 
+        {{ name2 }} by {{ author2 }}
+    </li>
+</ul>-->
+
+<!--Directives-->
+<!--nfIf-->
+<!--<button (click)="isShowing=!isShowing">
+    <ng-container *ngIf="!isShowing">Show Books</ng-container>
+    <ng-container *ngIf="isShowing">Hide Books</ng-container>
+</button>
+
+<ul *ngIf="isShowing">
+    <li>
+        <img [src]="src1" [alt]="name1" width="100"/> 
+        {{ name1 }} by {{ author1 }}
+    </li>
+    <li>
+        <img [src]="src2" [alt]="name2" width="100"/> 
+        {{ name2 }} by {{ author2 }}
+    </li>
+</ul>-->
+
+<!--ngFor-->
+<!--<button (click)="isShowing=!isShowing">
+    <ng-container *ngIf="!isShowing">Show Books</ng-container>
+    <ng-container *ngIf="isShowing">Hide Books</ng-container>
+</button>
+<ul *ngIf="isShowing">
+    <ng-container *ngFor="let book of books; let i=index">
+        <li>
+            {{i+1}}
+            <img [src]="book.image" [alt]="book.name" width="100"/> 
+            {{ book.name }} by {{ book.author }}
+        </li>
+    </ng-container>
+</ul>-->
+
+<!--Pipes-->
+<!--<button (click)="isShowing=!isShowing">
+    <ng-container *ngIf="!isShowing">Show Books</ng-container>
+    <ng-container *ngIf="isShowing">Hide Books</ng-container>
+</button>
+<ul *ngIf="isShowing">
+    <ng-container *ngFor="let book of books; let i=index">
+        <li>
+            {{i+1}}
+            <img [src]="book.image" [alt]="book.name" width="100"/> 
+            {{ book.name | titlecase }} by {{ book.author | titlecase}}
+            <p>{{book.amount | currency:'INR'}}</p>
+        </li>
+    </ng-container>
+</ul>-->
+
+<!--parent to child data and vice versa-->
+<!--<ul *ngIf="isShowing">
+    <ng-container *ngFor="let singleBook of books; let i=index">
+        <app-book (bookEmitter)="addToCard($event)" [book]="singleBook"></app-book>
+    </ng-container>
+</ul>-->
+
+<!--Lifecycle hooks-->
+<!--<button (click)="isShowing=!isShowing">Toggle</button>-->
+<ul *ngIf="isShowing" class="flex flex-wrap justify-center">
+    <ng-container *ngFor="let singleBook of books; let i=index">
+        <app-book [book]="singleBook" class="w-1/2 p-5 text-center"></app-book>
+    </ng-container>
+</ul>
